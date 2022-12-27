@@ -1,0 +1,27 @@
+version: '3.2'
+
+services:
+  database:
+    image: mysql:5.7
+    restart: always
+    container_name: database
+    tty: true
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=nodedb
+    networks:
+      - node-reverse-proxy
+    ports:
+      - "3306:3306"
+      - "33060:33060"
+
+  test:
+    image: ubuntu:latest
+    container_name: test
+    tty: true
+    networks:
+      - node-reverse-proxy
+
+networks:
+  node-reverse-proxy:
+    driver: bridge
