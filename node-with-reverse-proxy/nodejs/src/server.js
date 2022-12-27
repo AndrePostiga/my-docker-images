@@ -1,13 +1,14 @@
-const createApp = require("./index")
-const PORT = 3000
+const createApp = require('./index');
+
+const PORT = 3000;
 
 const listenApp = async () => {
-  let app
-  app = await createApp()
-  
-  return app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`)
-  })
-}
+    const app = await createApp();
 
-listenApp()
+    return app.listen(PORT, () => {
+        // eslint-disable-next-line no-console
+        console.log(`Server running on port ${PORT}`);
+    });
+};
+
+listenApp();
