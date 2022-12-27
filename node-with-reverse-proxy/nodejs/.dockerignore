@@ -1,0 +1,10 @@
+.editorconfig
+.eslintrc.js
+.prettierrc
+
+package-lock.json
+
+# Dependency directories
+node_modules/
+
+Dockerfile
